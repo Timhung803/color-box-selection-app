@@ -7,7 +7,7 @@ function App() {
   return (
     <main className="App">
       <div>
-        <div className="box colorBox" style={{ backgroundColor: `${color}` }}>
+        <div className="box colorBox" style={{ backgroundColor: `${color}`, color: `${color}`, textShadow: "2px 2px black" }}>
           {color.length > 0 ? color : "Empty Value"}
         </div>
         <form onSubmit={(e) => e.preventDefault()}>
