@@ -1,20 +1,29 @@
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
 function App() {
-  return (
- <main>
-   <div>Empty Value</div>
-   <form className='' onSubmit={(e) => e.preventDefault()}>
-     <label htmlFor="addColor"></label>
-     <input 
-      autoFocus
-      type="text" 
-      id='addColor'
-      placeholder='Add colour name'
-      />
+  const [color, setColor] = useState("");
 
-   </form>
- </main>
+  return (
+    <main className="App">
+      <div>
+        <div className="box colorBox" style={{ backgroundColor: `${color}` }}>
+          {color.length > 0 ? color : "Empty Value"}
+        </div>
+        <form onSubmit={(e) => e.preventDefault()}>
+          <label htmlFor="addColor"></label>
+          <input
+            autoFocus
+            className="box addColor"
+            id="addColor"
+            type="text"
+            placeholder="Add colour name"
+            value={color}
+            onChange={(e) => setColor(e.target.value)}
+          />
+        </form>
+      </div>
+    </main>
   );
 }
 
